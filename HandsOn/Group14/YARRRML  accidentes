@@ -6,12 +6,12 @@ prefix:
     xsd: http://www.w3.org/2001/XMLSchema#
   
 mappings:
-  city:
+  accidentesBici:
     sources:
       - [AGENCY.csv~csv]
-    s: http://movimientosostenible.org/group14/data/$(num_expediente)
+    s: http://movimientosostenible.org/group14/accidentesBici/$(num_expediente)
     po:
-      - [a, ns:numeroExpediente]
+      - [a, ns:Accidente]
       - [ns:numeroExpediente, $(num_expediente), xsd:String]
       - [ns:tipoAccidente, $(tipo_accidente), xsd:String]
       - [ns:hasTime, $(hora) ,xsd:String]
@@ -37,6 +37,22 @@ mappings:
       - [ns:longitud, $(longitud), xsd:Float]      
       - [ns:latitud, $(latitud), xsd:Float] 
 
-      
+  semaforosBici:
+    sources:
+      - [AGENCY_.csv~csv]
+    s: http://movimientosostenible.org/group14/semaforosBici/$(id_cruce)
+    po:
+      - [a, ns:CruceSemáforosBici]
+      - [ns:tieneCruceId, $(id_cruce), xsd:Integer]
+      - [ns:tieneSemaforoId, $(id), xsd:Integer]
+      - [ns:tieneTipoSemaforo, ns:TipoSemaforo]
+      - [ns:TipoSemaforo, $(tipo_elem)]
+      - [ns:tieneCoordenadas, ns:Coordenadas]
+      - [ns:Coordenadas, ns:longitud]
+      - [ns:Coordenadas, ns:latitud]
+      - [ns:longitud, $(longitud), xsd:Float]      
+      - [ns:latitud, $(latitud), xsd:Float] 
+      - [ns:tieneFechaInstalación, $(fecha_inst), ns:Fecha]
+      - [ns:estaEn, $(distrito), ns:Id]
       
       
