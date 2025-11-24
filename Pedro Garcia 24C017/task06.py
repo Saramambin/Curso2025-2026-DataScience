@@ -11,6 +11,7 @@ Original file is located at
 
 #pip install rdflib
 import urllib.request
+
 url = 'https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2025-2026/refs/heads/master/Assignment4/course_materials/python/validation.py'
 urllib.request.urlretrieve(url, 'validation.py')
 github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2025-2026/master/Assignment4/course_materials"
@@ -20,6 +21,7 @@ github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedDa
 from rdflib import Graph, Namespace, Literal, XSD
 from rdflib.namespace import RDF, RDFS
 from validation import Report
+
 g = Graph()
 g.namespace_manager.bind('ns', Namespace("http://somewhere#"), override=False)
 r = Report()
@@ -29,7 +31,7 @@ r = Report()
 ns = Namespace("http://oeg.fi.upm.es/def/people#")
 g.add((ns.Researcher, RDF.type, RDFS.Class))
 for s, p, o in g:
-  print(s,p,o)
+    print(s, p, o)
 
 """**Task 6.0: Create new prefixes for "ontology" and "person" as shown in slide 14 of the Slidedeck 01a.RDF(s)-SPARQL shown in class.**"""
 
@@ -62,7 +64,7 @@ g.add((ns.InterimAssociateProfessor, RDF.type, RDFS.Class))
 g.add((ns.InterimAssociateProfessor, RDFS.subClassOf, ns.AssociateProfessor))
 g.add((ns.InterimAssociateProfessor, RDFS.label, Literal("InterimAssociateProfessor", datatype=XSD.string)))
 for s, p, o in g:
-  print(s,p,o)
+    print(s, p, o)
 
 # Validation. Do not remove
 r.validate_task_06_01(g)
@@ -85,7 +87,7 @@ g.add((ns.HasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 g.add((ns.HasHomePage, RDFS.domain, ns.FullProfessor))
 g.add((ns.HasHomePage, RDFS.range, RDFS.Literal))
 for s, p, o in g:
-  print(s,p,o)
+    print(s, p, o)
 
 # Validation. Do not remove
 r.validate_task_06_02(g)
@@ -108,7 +110,7 @@ g.add((Datos.Asun, ns.hasColleague, Datos.Raul))
 g.add((Datos.Asun, ns.hasHomePage, Literal("http://oeg-upm.net/")))
 
 for s, p, o in g:
-  print(s,p,o)
+    print(s, p, o)
 
 r.validate_task_06_03(g)
 
@@ -122,7 +124,7 @@ g.add((Datos.Oscar, vcard.Given, Literal("Oscar", datatype=XSD.string)))
 g.add((Datos.Oscar, vcard.Family, Literal("Corcho García", datatype=XSD.string)))
 g.add((Datos.Oscar, foaf.email, Literal("ocorcho@fi.upm.es", datatype=XSD.string)))
 for s, p, o in g:
-  print(s,p,o)
+    print(s, p, o)
 
 # Validation. Do not remove
 r.validate_task_06_04(g)
