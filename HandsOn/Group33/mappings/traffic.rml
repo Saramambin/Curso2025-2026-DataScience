@@ -17,7 +17,7 @@
 
     rr:predicateObjectMap [
         rr:predicate ex:fecha ;
-        rr:objectMap [ rml:reference "DIA" ; rr:datatype xsd:string ]
+        rr:objectMap [ rml:reference "DIA" ; rr:datatype xsd:date ]
     ] ;
 
     rr:predicateObjectMap [
