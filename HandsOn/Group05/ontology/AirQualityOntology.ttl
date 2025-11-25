@@ -33,20 +33,22 @@ aq:mideParametro a owl:ObjectProperty ;
 
 aq:tieneId a owl:DatatypeProperty ;
     rdfs:label "tiene id" ;
-    rdfs:domain aq:Medicion .
+    rdfs:domain aq:Medicion ;
+    rdfs:range xsd:string .
 
 aq:tieneZonaHoraria a owl:DatatypeProperty ;
     rdfs:label "tiene zona horaria" ;
-    rdfs:domain aq:Medicion .
+    rdfs:domain aq:Medicion ;
+    rdfs:range xsd:string .
 
 aq:unidad a owl:DatatypeProperty ;
     rdfs:label "unidad" ;
-    rdfs:domain aq:Medicion ;
+    rdfs:domain aq:Contaminante ;
     rdfs:range xsd:string .
 
 aq:valor a owl:DatatypeProperty ;
     rdfs:label "valor" ;
-    rdfs:domain aq:Medicion ;
+    rdfs:domain aq:Contaminante ;
     rdfs:range xsd:decimal .
 
 dc:creator a owl:AnnotationProperty .
@@ -54,10 +56,6 @@ dc:creator a owl:AnnotationProperty .
 dc:title a owl:AnnotationProperty .
 
 owl:versionInfo a owl:AnnotationProperty .
-
-aq:Contaminante a owl:Class ;
-    rdfs:label "Contaminante" ;
-    rdfs:subClassOf sosa:ObservableProperty .
 
 aq:Ubicacion a owl:Class ;
     rdfs:label "Ubicacion" ;
@@ -71,6 +69,10 @@ sosa:ObservableProperty a owl:Class ;
 
 sosa:Observation a owl:Class ;
     rdfs:label "Observation" .
+
+aq:Contaminante a owl:Class ;
+    rdfs:label "Contaminante" ;
+    rdfs:subClassOf sosa:ObservableProperty .
 
 aq:Medicion a owl:Class ;
     rdfs:label "Medicion" ;
