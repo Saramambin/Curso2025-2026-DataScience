@@ -1,0 +1,62 @@
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balbuena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Observation> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balbuena> <https://grupo09.github.io/HandsOn/ontology#amount> "14297.033333333333"^^<http://www.w3.org/2001/XMLSchema#double> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balbuena> <https://grupo09.github.io/HandsOn/ontology#associatedStation> <https://grupo09.github.io/HandsOn/data/Station/balbuena> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balbuena> <https://grupo09.github.io/HandsOn/ontology#month> "Abril" .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balbuena> <https://grupo09.github.io/HandsOn/ontology#year> "2010"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balderas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Observation> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balderas> <https://grupo09.github.io/HandsOn/ontology#amount> "19769.2"^^<http://www.w3.org/2001/XMLSchema#double> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balderas> <https://grupo09.github.io/HandsOn/ontology#associatedStation> <https://grupo09.github.io/HandsOn/data/Station/balderas> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balderas> <https://grupo09.github.io/HandsOn/ontology#month> "Abril" .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/balderas> <https://grupo09.github.io/HandsOn/ontology#year> "2010"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/boulevard-puerto-aereo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Observation> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#amount> "31022.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#associatedStation> <https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#month> "Abril" .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#year> "2010"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/chapultepec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Observation> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/chapultepec> <https://grupo09.github.io/HandsOn/ontology#amount> "63710.03333333333"^^<http://www.w3.org/2001/XMLSchema#double> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/chapultepec> <https://grupo09.github.io/HandsOn/ontology#associatedStation> <https://grupo09.github.io/HandsOn/data/Station/chapultepec> .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/chapultepec> <https://grupo09.github.io/HandsOn/ontology#month> "Abril" .
+<https://grupo09.github.io/HandsOn/data/Observation/2010/Abril/chapultepec> <https://grupo09.github.io/HandsOn/ontology#year> "2010"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/balbuena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/balbuena> <http://www.w3.org/2000/01/rdf-schema#label> "Balbuena" .
+<https://grupo09.github.io/HandsOn/data/Station/balbuena> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/balbuena> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/balbuena> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1969"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/balbuena> <https://grupo09.github.io/HandsOn/ontology#stationType> "Intermedia" .
+<https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> <http://www.w3.org/2000/01/rdf-schema#label> "Boulevard Puerto A\u00E9reo" .
+<https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1969"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/boulevard-puerto-aereo> <https://grupo09.github.io/HandsOn/ontology#stationType> "Intermedia" .
+<https://grupo09.github.io/HandsOn/data/Station/gomez-farias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/gomez-farias> <http://www.w3.org/2000/01/rdf-schema#label> "Gomez Far\u00EDas" .
+<https://grupo09.github.io/HandsOn/data/Station/gomez-farias> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/gomez-farias> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/gomez-farias> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1969"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/gomez-farias> <https://grupo09.github.io/HandsOn/ontology#stationType> "Intermedia" .
+<https://grupo09.github.io/HandsOn/data/Station/moctezuma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/moctezuma> <http://www.w3.org/2000/01/rdf-schema#label> "Moctezuma" .
+<https://grupo09.github.io/HandsOn/data/Station/moctezuma> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/moctezuma> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/moctezuma> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1969"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/moctezuma> <https://grupo09.github.io/HandsOn/ontology#stationType> "Intermedia" .
+<https://grupo09.github.io/HandsOn/data/Station/pantitlan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/pantitlan> <http://www.w3.org/2000/01/rdf-schema#label> "Pantitl\u00E1n" .
+<https://grupo09.github.io/HandsOn/data/Station/pantitlan> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/pantitlan> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/pantitlan> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1984"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/pantitlan> <https://grupo09.github.io/HandsOn/ontology#stationType> "Terminal / Transbordo" .
+<https://grupo09.github.io/HandsOn/data/Station/san-lazaro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/san-lazaro> <http://www.w3.org/2000/01/rdf-schema#label> "San L\u00E1zaro" .
+<https://grupo09.github.io/HandsOn/data/Station/san-lazaro> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/san-lazaro> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/san-lazaro> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1969"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/san-lazaro> <https://grupo09.github.io/HandsOn/ontology#stationType> "Intermedia / Transbordo" .
+<https://grupo09.github.io/HandsOn/data/Station/zaragoza> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://grupo09.github.io/HandsOn/ontology#Station> .
+<https://grupo09.github.io/HandsOn/data/Station/zaragoza> <http://www.w3.org/2000/01/rdf-schema#label> "Zaragoza" .
+<https://grupo09.github.io/HandsOn/data/Station/zaragoza> <https://grupo09.github.io/HandsOn/ontology#belongsToLine> <https://grupo09.github.io/HandsOn/data/Line/linea-1> .
+<https://grupo09.github.io/HandsOn/data/Station/zaragoza> <https://grupo09.github.io/HandsOn/ontology#locatedIn> "Venustiano Carranza" .
+<https://grupo09.github.io/HandsOn/data/Station/zaragoza> <https://grupo09.github.io/HandsOn/ontology#openingYear> "1969"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<https://grupo09.github.io/HandsOn/data/Station/zaragoza> <https://grupo09.github.io/HandsOn/ontology#stationType> "Intermedia" .
