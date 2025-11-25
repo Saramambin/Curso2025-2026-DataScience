@@ -8,7 +8,7 @@ prefix:
 mappings:
   accidentesBici:
     sources:
-      - [csv/AccidentesBicicletas-2024-limpio-updated.csv~csv]
+      - [AccidentesBicicletas-2024-limpio-updated.csv~csv]
     s: http://movimientosostenible.org/group14/accidentesBici/$(num_expediente)
     po:
       - [a, ns:Accidente]
@@ -39,7 +39,7 @@ mappings:
 
   semaforosBici:
     sources:
-      - [csv/cabezas-semaforo-bici-updated.csv~csv]
+      - [cabezas-semaforo-bici-updated.csv~csv]
     s: http://movimientosostenible.org/group14/semaforosBici/$(id_cruce)
     po:
       - [a, ns:CruceSemáforosBici]
