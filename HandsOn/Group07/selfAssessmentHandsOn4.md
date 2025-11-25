@@ -28,7 +28,7 @@
 
 **Every URI in the RDF files:**
 
-* [x] Is readable and meaningful
+* [x] Is readable and has meaning
 
   * Example: `.../Observation/28079004_12_8_2024_01` clearly identifies the resource.
 
@@ -38,7 +38,7 @@
 
 * [x] Does not contain a double slash (`//`)
 
-  * Confirmed by inspecting the RDF output.
+  * Confirmed in the RDF output.
 
 ---
 
@@ -76,9 +76,8 @@
 
 ## Comments on the self-assessment
 
-* The RML mapping was carefully aligned with the ontology created in Assignment 2.
-* The CSV underwent thorough cleaning in Assignment 3, ensuring compatibility with datatype requirements and correct RDF generation.
+* The RML mapping was made to match with the ontology created in Assignment 2.
 * Each observation was modeled as an instance of `aq:AirQualityObservation` with multiple daily values attached via `aq:hasValue`.
 * Stations and pollutants were generated as independent individuals and linked to each observation.
-* All generated individuals include human-readable labels and consistent URIs following the group naming strategy.
+* All generated individuals include readable labels and consistent URIs following the group naming strategy.
 * The final RDF results were validated using custom SPARQL queries included in `rdf/queries.sparql`.

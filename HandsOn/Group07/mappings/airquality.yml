@@ -48,7 +48,7 @@ mappings:
         o:
           - mapping: Pollutants
 
-      # All daily values as multi-valued aq:hasValue
+      # All daily values
       - [aq:hasValue, $(D01), xsd:float]
       - [aq:hasValue, $(D02), xsd:float]
       - [aq:hasValue, $(D03), xsd:float]
