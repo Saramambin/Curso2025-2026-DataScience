@@ -1,8 +1,8 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
 @prefix rml: <http://semweb.mmlab.be/ns/rml#>.
 @prefix ql: <http://semweb.mmlab.be/ns/ql#>.
-@prefix st: <http://group11.linkeddata.es/ontology/station#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix st: <http://group11.linkeddata.es/ontology/station#>.
 
 <#TriplesMap_Station> a rr:TriplesMap;
   rml:logicalSource [
