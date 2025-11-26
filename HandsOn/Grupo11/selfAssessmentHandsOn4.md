@@ -7,6 +7,6 @@
 **Members:** [Sihan Du, Ye Jin, Channa Pan]
 
 ---
-El Assigment4 lo hemos hecho a partir de la creación del mapping en YARRRML, definiendo los sources,subjects,predicate-objectmaps, haciendo referencia a las columnas del CSV y configurando las URIs para cada estación y los predicados de la ontología que hemos hecho en los assigments anteriores.
+El Assignment4 se ha realizado a partir de la creación del mapping en YARRRML, definiendo los sources, subjects y predicate-objectmaps, haciendo referencia a las columnas del CSV y configurando las URIs para cada estación y los predicados de la ontología definida en los assignments anteriores.
 
-Además, hemos verificado nuestros datos todos están bien a través del queries.sparql que hay que definir.
+Además, se ha verificado que todos lo datos están correctamente definidos, haciendo uso del queries.sparql recientemente creado.
