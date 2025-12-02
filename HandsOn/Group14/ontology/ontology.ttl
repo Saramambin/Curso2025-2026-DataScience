@@ -7,37 +7,30 @@
 ns: a owl:Ontology ;
     mod:createdWith <https://chowlk.linkeddata.es/> .
 
-<http://movimientosostenible.org/group14#isa> a owl:ObjectProperty ;
-    rdfs:label "isa" ;
-    rdfs:domain ns:Bicicleta,
-        ns:BicicletaEPAC ;
-    rdfs:range ns:TipoVehiculo .
+ns:Bicicleta a owl:Class ;
+    rdfs:label "Bicicleta" ;
+    rdfs:subClassOf ns:TipoVehiculo .
 
-ns:2200PeatonBici a owl:Class ;
-    rdfs:label "2200 Peaton Bici" ;
-    rdfs:subClassOf ns:TipoSemaforo .
+ns:BicicletaEPAC a owl:Class ;
+    rdfs:label "Bicicleta E P A C" ;
+    rdfs:subClassOf ns:TipoVehiculo .
 
-ns:2_200Bici a owl:Class ;
-    rdfs:label "2_200 Bici" ;
-    rdfs:subClassOf ns:TipoSemaforo .
+ns:2200PeatonBici a ns:TipoSemaforo ;
+    rdfs:label "2200 Peaton Bici" .
 
-ns:3100Bici a owl:Class ;
-    rdfs:label "3100 Bici" ;
-    rdfs:subClassOf ns:TipoSemaforo .
+ns:2_200Bici a ns:TipoSemaforo ;
+    rdfs:label "2_200 Bici" .
 
-ns:3200Bici a owl:Class ;
-    rdfs:label "3200 Bici" ;
-    rdfs:subClassOf ns:TipoSemaforo .
+ns:3100Bici a ns:TipoSemaforo ;
+    rdfs:label "3100 Bici" .
+
+ns:3200Bici a ns:TipoSemaforo ;
+    rdfs:label "3200 Bici" .
 
 ns:alcohol a owl:DatatypeProperty ;
     rdfs:label "alcohol" ;
     rdfs:domain ns:TestSustancias ;
     rdfs:range xsd:Boolean .
-
-ns:distrito a owl:DatatypeProperty ;
-    rdfs:label "distrito" ;
-    rdfs:domain ns:Accidente ;
-    rdfs:range xsd:String .
 
 ns:droga a owl:DatatypeProperty ;
     rdfs:label "droga" ;
@@ -48,11 +41,6 @@ ns:edad a owl:DatatypeProperty ;
     rdfs:label "edad" ;
     rdfs:domain ns:PersonaImplicadaAccidente ;
     rdfs:range xsd:String .
-
-ns:estaEn a owl:ObjectProperty ;
-    rdfs:label "esta en" ;
-    rdfs:domain ns:CruceSemaforoBici ;
-    rdfs:range ns:Id .
 
 ns:gender a owl:DatatypeProperty ;
     rdfs:label "gender" ;
@@ -68,11 +56,6 @@ ns:hasDate a owl:ObjectProperty ;
     rdfs:label "has date" ;
     rdfs:domain ns:Accidente ;
     rdfs:range ns:Fecha .
-
-ns:hasDistritoid a owl:ObjectProperty ;
-    rdfs:label "has distritoid" ;
-    rdfs:domain ns:Accidente ;
-    rdfs:range ns:Id .
 
 ns:hasLesi a owl:ObjectProperty ;
     rdfs:label "has lesi" ;
@@ -160,12 +143,6 @@ ns:tipoAccidente a owl:DatatypeProperty ;
     rdfs:domain ns:Accidente ;
     rdfs:range xsd:String .
 
-ns:Bicicleta a owl:Class ;
-    rdfs:label "Bicicleta" .
-
-ns:BicicletaEPAC a owl:Class ;
-    rdfs:label "Bicicleta E P A C" .
-
 ns:Persona a owl:Class ;
     rdfs:label "Persona" .
 
@@ -175,8 +152,23 @@ ns:Test a owl:Class ;
 ns:Fecha a owl:Class ;
     rdfs:label "Fecha" .
 
-ns:Id a owl:Class ;
-    rdfs:label "Id" .
+ns:Distrito a owl:Class ;
+    rdfs:label "Distrito" .
+
+ns:distritoId a owl:DatatypeProperty ;
+    rdfs:label "distrito id" ;
+    rdfs:domain ns:Distrito ;
+    rdfs:range xsd:integer .
+
+ns:distritoNombre a owl:DatatypeProperty ;
+    rdfs:label "distrito nombre" ;
+    rdfs:domain ns:Distrito ;
+    rdfs:range xsd:string .
+
+ns:enDistrito a owl:ObjectProperty ;
+    rdfs:label "en distrito" ;
+    rdfs:range ns:Distrito ;
+    rdfs:domain ns:Accidente , ns:CruceSemaforoBici .
 
 ns:TipoVehiculo a owl:Class ;
     rdfs:label "Tipo Vehiculo" .
