@@ -26,142 +26,137 @@ map:om_000 rdf:type rr:ObjectMap ;
 
 map:om_001 rml:reference "num_expediente" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_002 rml:reference "tipo_accidente" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_003 rml:reference "hora" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_004 rml:reference "distrito" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_005 rml:reference "estado_meteorologico" ;
+map:om_005 rml:reference "wikidata_distrito" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:termType rr:IRI .
+
+map:om_006 rml:reference "estado_meteorologico" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_006 rml:reference "cod_distrito" ;
+map:om_007 rml:reference "cod_distrito" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype <ns:Id> ;
 	rr:termType rr:Literal .
 
-map:om_007 rml:reference "fecha" ;
+map:om_008 rml:reference "fecha" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype <ns:Fecha> ;
 	rr:termType rr:Literal .
 
-map:om_008 rml:reference "tipo_vehiculo" ;
+map:om_009 rml:reference "wikidata_fecha" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:IRI .
+
+map:om_010 rml:reference "tipo_vehiculo" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype <ns:tipoVehiculo> ;
 	rr:termType rr:Literal .
 
-map:om_009 rml:reference "lesividad" ;
+map:om_011 rml:reference "wikidata_tipo_vehiculo" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:IRI .
+
+map:om_012 rml:reference "lesividad" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype <ns:Lesividad> ;
 	rr:termType rr:Literal .
 
-map:om_010 rml:reference "cod_lesividad" ;
+map:om_013 rml:reference "cod_lesividad" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Integer ;
+	rr:datatype xsd:integer ;
 	rr:termType rr:Literal .
 
-map:om_011 rml:reference "lesividad" ;
+map:om_014 rml:reference "lesividad" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_012 rml:reference "tipo_persona" ;
+map:om_015 rml:reference "tipo_persona" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:PersonaImplicadaAccidente ;
 	rr:termType rr:Literal .
 
-map:om_013 rml:reference "rango_edad" ;
+map:om_016 rml:reference "wikidata_tipo_persona" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:termType rr:IRI .
+
+map:om_017 rml:reference "rango_edad" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_014 rml:reference "sexo" ;
+map:om_018 rml:reference "sexo" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:String ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
-map:om_015 rdf:type rr:ObjectMap ;
+map:om_019 rml:reference "wikidata_sexo" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:IRI .
+
+map:om_020 rdf:type rr:ObjectMap ;
 	rr:constant "ns:TestSustancias" ;
 	rr:termType rr:Literal .
 
-map:om_016 rml:reference "positiva_droga" ;
+map:om_021 rml:reference "positiva_droga" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Boolean ;
+	rr:datatype xsd:boolena ;
 	rr:termType rr:Literal .
 
-map:om_017 rml:reference "positiva_alcohol" ;
+map:om_022 rml:reference "positiva_alcohol" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Boolean ;
+	rr:datatype xsd:boolena ;
 	rr:termType rr:Literal .
 
-map:om_018 rdf:type rr:ObjectMap ;
+map:om_023 rdf:type rr:ObjectMap ;
 	rr:constant "ns:Localización" ;
 	rr:termType rr:Literal .
 
-map:om_019 rdf:type rr:ObjectMap ;
+map:om_024 rdf:type rr:ObjectMap ;
 	rr:constant "ns:hasNumber" ;
 	rr:termType rr:Literal .
 
-map:om_020 rml:reference "numero" ;
+map:om_025 rml:reference "numero" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Integer ;
-	rr:termType rr:Literal .
-
-map:om_021 rdf:type rr:ObjectMap ;
-	rr:constant "ns:longitud" ;
-	rr:termType rr:Literal .
-
-map:om_022 rdf:type rr:ObjectMap ;
-	rr:constant "ns:latitud" ;
-	rr:termType rr:Literal .
-
-map:om_023 rml:reference "longitud" ;
-	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Float ;
-	rr:termType rr:Literal .
-
-map:om_024 rml:reference "latitud" ;
-	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Float ;
-	rr:termType rr:Literal .
-
-map:om_025 rdf:type rr:ObjectMap ;
-	rr:constant "http://www.w3.org/2002/07/owl#sameAs" ;
-	rr:datatype <$(wikidata_fecha)> ;
+	rr:datatype xsd:integer ;
 	rr:termType rr:Literal .
 
 map:om_026 rdf:type rr:ObjectMap ;
-	rr:constant "http://www.w3.org/2002/07/owl#sameAs" ;
-	rr:datatype <$(wikidata_distrito)> ;
+	rr:constant "ns:longitud" ;
 	rr:termType rr:Literal .
 
 map:om_027 rdf:type rr:ObjectMap ;
-	rr:constant "http://www.w3.org/2002/07/owl#sameAs" ;
-	rr:datatype <$(wikidata_tipo_vehiculo)> ;
+	rr:constant "ns:latitud" ;
 	rr:termType rr:Literal .
 
-map:om_028 rdf:type rr:ObjectMap ;
-	rr:constant "http://www.w3.org/2002/07/owl#sameAs" ;
-	rr:datatype <$(wikidata_tipo_persona)> ;
+map:om_028 rml:reference "longitud" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:float ;
 	rr:termType rr:Literal .
 
-map:om_029 rdf:type rr:ObjectMap ;
-	rr:constant "http://www.w3.org/2002/07/owl#sameAs" ;
-	rr:datatype <$(sexo)> ;
+map:om_029 rml:reference "latitud" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:float ;
 	rr:termType rr:Literal .
 
 map:om_030 rdf:type rr:ObjectMap ;
@@ -170,12 +165,12 @@ map:om_030 rdf:type rr:ObjectMap ;
 
 map:om_031 rml:reference "id_cruce" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Integer ;
+	rr:datatype xsd:integer ;
 	rr:termType rr:Literal .
 
 map:om_032 rml:reference "id" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Integer ;
+	rr:datatype xsd:integer ;
 	rr:termType rr:Literal .
 
 map:om_033 rdf:type rr:ObjectMap ;
@@ -200,12 +195,12 @@ map:om_037 rdf:type rr:ObjectMap ;
 
 map:om_038 rml:reference "longitud" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Float ;
+	rr:datatype xsd:float ;
 	rr:termType rr:Literal .
 
 map:om_039 rml:reference "latitud" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:Float ;
+	rr:datatype xsd:float ;
 	rr:termType rr:Literal .
 
 map:om_040 rml:reference "fecha_inst" ;
@@ -213,14 +208,13 @@ map:om_040 rml:reference "fecha_inst" ;
 	rr:datatype <ns:Fecha> ;
 	rr:termType rr:Literal .
 
-map:om_041 rml:reference "distrito" ;
+map:om_041 rml:reference "same_as_wikidata_fecha" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:IRI .
+
+map:om_042 rml:reference "distrito" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype <ns:Id> ;
-	rr:termType rr:Literal .
-
-map:om_042 rdf:type rr:ObjectMap ;
-	rr:constant "http://www.w3.org/2002/07/owl#sameAs" ;
-	rr:datatype <$(same_as_wikidata_fecha)> ;
 	rr:termType rr:Literal .
 
 map:pm_000 rdf:type rr:PredicateMap ;
@@ -239,79 +233,79 @@ map:pm_004 rdf:type rr:PredicateMap ;
 	rr:constant <ns:distrito> .
 
 map:pm_005 rdf:type rr:PredicateMap ;
-	rr:constant <ns:meteo> .
+	rr:constant owl:sameAs .
 
 map:pm_006 rdf:type rr:PredicateMap ;
-	rr:constant <ns:hasDistritoid> .
+	rr:constant <ns:meteo> .
 
 map:pm_007 rdf:type rr:PredicateMap ;
-	rr:constant <ns:hasDate> .
+	rr:constant <ns:hasDistritoid> .
 
 map:pm_008 rdf:type rr:PredicateMap ;
-	rr:constant <ns:hasType> .
+	rr:constant <ns:hasDate> .
 
 map:pm_009 rdf:type rr:PredicateMap ;
-	rr:constant <ns:hasType> .
+	rr:constant owl:sameAs .
 
 map:pm_010 rdf:type rr:PredicateMap ;
-	rr:constant <ns:hasCode> .
-
-map:pm_011 rdf:type rr:PredicateMap ;
 	rr:constant <ns:hasType> .
 
+map:pm_011 rdf:type rr:PredicateMap ;
+	rr:constant owl:sameAs .
+
 map:pm_012 rdf:type rr:PredicateMap ;
-	rr:constant <ns:implicada> .
+	rr:constant <ns:hasType> .
 
 map:pm_013 rdf:type rr:PredicateMap ;
-	rr:constant <ns:edad> .
+	rr:constant <ns:hasCode> .
 
 map:pm_014 rdf:type rr:PredicateMap ;
-	rr:constant <ns:gender> .
+	rr:constant <ns:hasType> .
 
 map:pm_015 rdf:type rr:PredicateMap ;
-	rr:constant <ns:requiereTest> .
+	rr:constant <ns:implicada> .
 
 map:pm_016 rdf:type rr:PredicateMap ;
-	rr:constant <ns:droga> .
+	rr:constant owl:sameAs .
 
 map:pm_017 rdf:type rr:PredicateMap ;
-	rr:constant <ns:alcohol> .
+	rr:constant <ns:edad> .
 
 map:pm_018 rdf:type rr:PredicateMap ;
-	rr:constant <ns:ocurreEn> .
+	rr:constant <ns:gender> .
 
 map:pm_019 rdf:type rr:PredicateMap ;
-	rr:constant <ns:Localización> .
+	rr:constant owl:sameAs .
 
 map:pm_020 rdf:type rr:PredicateMap ;
-	rr:constant <ns:hasNumber> .
+	rr:constant <ns:requiereTest> .
 
 map:pm_021 rdf:type rr:PredicateMap ;
-	rr:constant <ns:Coordenadas> .
+	rr:constant <ns:droga> .
 
 map:pm_022 rdf:type rr:PredicateMap ;
-	rr:constant <ns:Coordenadas> .
+	rr:constant <ns:alcohol> .
 
 map:pm_023 rdf:type rr:PredicateMap ;
-	rr:constant <ns:longitud> .
+	rr:constant <ns:ocurreEn> .
 
 map:pm_024 rdf:type rr:PredicateMap ;
+	rr:constant <ns:Localización> .
+
+map:pm_025 rdf:type rr:PredicateMap ;
+	rr:constant <ns:hasNumber> .
+
+map:pm_026 rdf:type rr:PredicateMap ;
+	rr:constant <ns:Coordenadas> .
+
+map:pm_027 rdf:type rr:PredicateMap ;
+	rr:constant <ns:Coordenadas> .
+
+map:pm_028 rdf:type rr:PredicateMap ;
+	rr:constant <ns:longitud> .
+
+map:pm_029 rdf:type rr:PredicateMap ;
 	rr:constant <ns:latitud> .
-
-map:pm_025 rml:reference "fecha" ;
-	rdf:type rr:PredicateMap .
-
-map:pm_026 rml:reference "distrito" ;
-	rdf:type rr:PredicateMap .
-
-map:pm_027 rml:reference "tipo_vehiculo" ;
-	rdf:type rr:PredicateMap .
-
-map:pm_028 rml:reference "tipo_persona" ;
-	rdf:type rr:PredicateMap .
-
-map:pm_029 rml:reference "sexo" ;
-	rdf:type rr:PredicateMap .
 
 map:pm_030 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
@@ -347,10 +341,10 @@ map:pm_040 rdf:type rr:PredicateMap ;
 	rr:constant <ns:tieneFechaInstalación> .
 
 map:pm_041 rdf:type rr:PredicateMap ;
-	rr:constant <ns:estaEn> .
+	rr:constant owl:sameAs .
 
-map:pm_042 rml:reference "fecha_inst" ;
-	rdf:type rr:PredicateMap .
+map:pm_042 rdf:type rr:PredicateMap ;
+	rr:constant <ns:estaEn> .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
