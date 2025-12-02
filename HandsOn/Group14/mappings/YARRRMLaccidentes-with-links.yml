@@ -40,7 +40,7 @@ mappings:
       - [$(distrito), owl:sameAs, $(wikidata_distrito)]
       - [$(tipo_vehiculo), owl:sameAs, $(wikidata_tipo_vehiculo)]
       - [$(tipo_persona), owl:sameAs, $(wikidata_tipo_persona)]
-      - [$(sexo), owl:sameAs, $(sexo)]
+      - [$(sexo), owl:sameAs, $(wikidata_sexo)]
 
   semaforosBici:
     sources:
