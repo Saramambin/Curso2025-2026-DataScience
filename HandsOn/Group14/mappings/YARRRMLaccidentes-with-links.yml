@@ -12,35 +12,40 @@ mappings:
     s: http://movimientosostenible.org/group14/accidentesBici/$(num_expediente)
     po:
       - [a, ns:Accidente]
-      - [ns:numeroExpediente, $(num_expediente), xsd:String]
-      - [ns:tipoAccidente, $(tipo_accidente), xsd:String]
-      - [ns:hasTime, $(hora) ,xsd:String]
-      - [ns:distrito, $(distrito) ,xsd:String]
-      - [ns:meteo, $(estado_meteorologico), xsd:String]
+      - [ns:numeroExpediente, $(num_expediente), xsd:string]
+      - [ns:tipoAccidente, $(tipo_accidente), xsd:string]
+      - [ns:hasTime, $(hora) ,xsd:string]
+      - [ns:distrito, $(distrito) ,xsd:string]
+      - [owl:sameAs, $(wikidata_distrito)~iri]
+      - [ns:meteo, $(estado_meteorologico), xsd:string]
       - [ns:hasDistritoid, $(cod_distrito), ns:Id]
       - [ns:hasDate, $(fecha), ns:Fecha]
+      - [owl:sameAs, $(wikidata_fecha)~iri]
       - [ns:hasType, $(tipo_vehiculo), ns:tipoVehiculo]
+      - [owl:sameAs, $(wikidata_tipo_vehiculo)~iri]
       - [ns:hasType, $(lesividad), ns:Lesividad] 
-      - [ns:hasCode, $(cod_lesividad), xsd:Integer]
-      - [ns:hasType, $(lesividad), xsd:String]      
+      - [ns:hasCode, $(cod_lesividad), xsd:integer]
+      - [ns:hasType, $(lesividad), xsd:string]      
       - [ns:implicada,  $(tipo_persona), xsd:PersonaImplicadaAccidente]
-      - [ns:edad, $(rango_edad), xsd:String]
-      - [ns:gender, $(sexo), xsd:String]
+      - [owl:sameAs, $(wikidata_tipo_persona)~iri]
+      - [ns:edad, $(rango_edad), xsd:string]
+      - [ns:gender, $(sexo), xsd:string]
+      - [owl:sameAs, $(wikidata_sexo)~iri]
       - [ns:requiereTest, ns:TestSustancias]
-      - [ns:droga, $(positiva_droga), xsd:Boolean]
-      - [ns:alcohol, $(positiva_alcohol), xsd:Boolean]     
+      - [ns:droga, $(positiva_droga), xsd:boolena]
+      - [ns:alcohol, $(positiva_alcohol), xsd:boolena]     
       - [ns:ocurreEn, ns:Localización]
       - [ns:Localización, ns:hasNumber]
-      - [ns:hasNumber, $(numero), xsd:Integer]
+      - [ns:hasNumber, $(numero), xsd:integer]
       - [ns:Coordenadas, ns:longitud]
       - [ns:Coordenadas, ns:latitud]
-      - [ns:longitud, $(longitud), xsd:Float]      
-      - [ns:latitud, $(latitud), xsd:Float] 
-      - [$(fecha), owl:sameAs, $(wikidata_fecha)]
-      - [$(distrito), owl:sameAs, $(wikidata_distrito)]
-      - [$(tipo_vehiculo), owl:sameAs, $(wikidata_tipo_vehiculo)]
-      - [$(tipo_persona), owl:sameAs, $(wikidata_tipo_persona)]
-      - [$(sexo), owl:sameAs, $(wikidata_sexo)]
+      - [ns:longitud, $(longitud), xsd:float]      
+      - [ns:latitud, $(latitud), xsd:float] 
+      
+      
+      
+      
+      
 
   semaforosBici:
     sources:
@@ -48,17 +53,18 @@ mappings:
     s: http://movimientosostenible.org/group14/semaforosBici/$(id_cruce)
     po:
       - [a, ns:CruceSemáforosBici]
-      - [ns:tieneCruceId, $(id_cruce), xsd:Integer]
-      - [ns:tieneSemaforoId, $(id), xsd:Integer]
+      - [ns:tieneCruceId, $(id_cruce), xsd:integer]
+      - [ns:tieneSemaforoId, $(id), xsd:integer]
       - [ns:tieneTipoSemaforo, ns:TipoSemaforo]
       - [ns:TipoSemaforo, $(tipo_elem)]
       - [ns:tieneCoordenadas, ns:Coordenadas]
       - [ns:Coordenadas, ns:longitud]
       - [ns:Coordenadas, ns:latitud]
-      - [ns:longitud, $(longitud), xsd:Float]      
-      - [ns:latitud, $(latitud), xsd:Float] 
+      - [ns:longitud, $(longitud), xsd:float]      
+      - [ns:latitud, $(latitud), xsd:float] 
       - [ns:tieneFechaInstalación, $(fecha_inst), ns:Fecha]
+      - [owl:sameAs, $(same_as_wikidata_fecha)~iri]
       - [ns:estaEn, $(distrito), ns:Id]
-      - [$(fecha_inst), owl:sameAs, $(same_as_wikidata_fecha)]
+      
       
       
