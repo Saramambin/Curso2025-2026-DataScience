@@ -34,7 +34,7 @@ mappings:
       - [ns:requiereTest, ns:TestSustancias]
       - [ns:droga, $(positiva_droga), xsd:boolena]
       - [ns:alcohol, $(positiva_alcohol), xsd:boolena]     
-      - [ns:ocurreEn, ns:Localización]
+      - [ns:ocurreEn, ns:Localizacion]
       - [ns:Localización, ns:hasNumber]
       - [ns:hasNumber, $(numero), xsd:integer]
       - [ns:Coordenadas, ns:longitud]
@@ -62,7 +62,7 @@ mappings:
       - [ns:Coordenadas, ns:latitud]
       - [ns:longitud, $(longitud), xsd:float]      
       - [ns:latitud, $(latitud), xsd:float] 
-      - [ns:tieneFechaInstalación, $(fecha_inst), ns:Fecha]
+      - [ns:tieneFechaInstalacion, $(fecha_inst), ns:Fecha]
       - [owl:sameAs, $(same_as_wikidata_fecha)~iri]
       - [ns:estaEn, $(distrito), ns:Id]
       
