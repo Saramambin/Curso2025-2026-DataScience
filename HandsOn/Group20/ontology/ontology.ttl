@@ -1,93 +1,81 @@
-@prefix ns:   <https://datos.grupo20-2025-cdia.org/ontology/bicimad#> .
-@prefix ex:   <https://datos.grupo20-2025-cdia.org/resource/> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix :   <http://poblacionmadrid.org/group20#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://datos.grupo20-2025-cdia.org/ontology/bicimad> a owl:Ontology ;
-    rdfs:label "Ontología ligera de BiciMAD"@es ;
-    rdfs:comment "Ontología mínima para estaciones de BiciMAD y su localización administrativa. Cumple las normas de nomenclatura, dominios y rangos de la asignatura."@es .
+<http://poblacionmadrid.org/group20> a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
 
-############################
 # Clases
-############################
 
-ns:Station  a owl:Class ;
-    rdfs:label "Estación"@es ;
-    rdfs:comment "Estación de BiciMAD."@es .
+:Ciudad a owl:Class ;
+    rdfs:label "Ciudad" .
 
-ns:Location a owl:Class ;
-    rdfs:label "Localización"@es ;
-    rdfs:comment "Coordenadas geográficas de una estación."@es .
+:Distrito a owl:Class ;
+    rdfs:label "Distrito" .
 
-ns:District a owl:Class ;
-    rdfs:label "Distrito"@es ;
-    rdfs:comment "Unidad administrativa del municipio de Madrid."@es .
+:Barrio a owl:Class ;
+    rdfs:label "Barrio" .
 
-############################
+:RegistroPoblacion a owl:Class ;
+    rdfs:label "Registro de población" .
+
 # Propiedades de objeto
-############################
 
-ns:hasLocation a owl:ObjectProperty ;
-    rdfs:label "ubicación"@es ;
-    rdfs:domain ns:Station ;
-    rdfs:range  ns:Location .
+:perteneceAMunicipio a owl:ObjectProperty ;
+    rdfs:label "pertenece al municipio" ;
+    rdfs:domain :Distrito ;
+    rdfs:range  :Ciudad .
 
-ns:hasDistrict a owl:ObjectProperty ;
-    rdfs:label "distrito"@es ;
-    rdfs:domain ns:Station ;
-    rdfs:range  ns:District .
+:perteneceADistrito a owl:ObjectProperty ;
+    rdfs:label "pertenece al distrito" ;
+    rdfs:domain :Barrio ;
+    rdfs:range  :Distrito .
 
-############################
-# Propiedades de datos (Station)
-############################
+:esRegistroDeBarrio a owl:ObjectProperty ;
+    rdfs:label "es registro de barrio" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  :Barrio .
 
-ns:hasStationId a owl:DatatypeProperty ;
-    rdfs:label "id de la estación"@es ;
-    rdfs:domain ns:Station ;
+# Propiedades de datos
+
+:tieneFecha a owl:DatatypeProperty ;
+    rdfs:label "tiene fecha (texto)" ;
+    rdfs:domain :RegistroPoblacion ;
     rdfs:range  xsd:string .
 
-ns:hasName a owl:DatatypeProperty ;
-    rdfs:label "nombre"@es ;
-    rdfs:domain ns:Station ;
-    rdfs:range  xsd:string .
+:tieneAnio a owl:DatatypeProperty ;
+    rdfs:label "tiene año" ;
+    rdfs:domain :RegistroPoblacion ;
+    rdfs:range  xsd:gYear .
 
-ns:hasAddress a owl:DatatypeProperty ;
-    rdfs:label "dirección"@es ;
-    rdfs:domain ns:Station ;
-    rdfs:range  xsd:string .
-
-ns:hasDockBikes a owl:DatatypeProperty ;
-    rdfs:label "bicicletas enganchadas"@es ;
-    rdfs:domain ns:Station ;
+:tienePoblacionTotal a owl:DatatypeProperty ;
+    rdfs:label "tiene población total" ;
+    rdfs:domain :RegistroPoblacion ;
     rdfs:range  xsd:integer .
 
-ns:hasFreeBases a owl:DatatypeProperty ;
-    rdfs:label "bases libres"@es ;
-    rdfs:domain ns:Station ;
+:tienePoblacionHombres a owl:DatatypeProperty ;
+    rdfs:label "tiene población de hombres" ;
+    rdfs:domain :RegistroPoblacion ;
     rdfs:range  xsd:integer .
 
-ns:hasTotalBases a owl:DatatypeProperty ;
-    rdfs:label "bases totales"@es ;
-    rdfs:domain ns:Station ;
+:tienePoblacionMujeres a owl:DatatypeProperty ;
+    rdfs:label "tiene población de mujeres" ;
+    rdfs:domain :RegistroPoblacion ;
     rdfs:range  xsd:integer .
 
-ns:hasStatus a owl:DatatypeProperty ;
-    rdfs:label "estado"@es ;
-    rdfs:domain ns:Station ;
-    rdfs:range  xsd:string .
+:tieneCodigoMunicipio a owl:DatatypeProperty ;
+    rdfs:label "código de municipio" ;
+    rdfs:domain :Ciudad ;
+    rdfs:range  xsd:integer .
 
-############################
-# Propiedades de datos (Location)
-############################
+:tieneCodigoDistrito a owl:DatatypeProperty ;
+    rdfs:label "código de distrito" ;
+    rdfs:domain :Distrito ;
+    rdfs:range  xsd:integer .
 
-ns:hasLatitude a owl:DatatypeProperty ;
-    rdfs:label "latitud"@es ;
-    rdfs:domain ns:Location ;
-    rdfs:range  xsd:float .
-
-ns:hasLongitude a owl:DatatypeProperty ;
-    rdfs:label "longitud"@es ;
-    rdfs:domain ns:Location ;
-    rdfs:range  xsd:float .
+:tieneCodigoBarrio a owl:DatatypeProperty ;
+    rdfs:label "código de barrio" ;
+    rdfs:domain :Barrio ;
+    rdfs:range  xsd:integer .
