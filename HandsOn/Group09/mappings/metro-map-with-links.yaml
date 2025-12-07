@@ -1,0 +1,37 @@
+prefixes:
+  metro: "https://grupo09.github.io/HandsOn/ontology#"
+  data: "https://grupo09.github.io/HandsOn/data/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  owl: "http://www.w3.org/2002/07/owl#"
+
+mappings:
+  stations:
+    sources:
+      - ['lineas-estaciones-wikiConnected.csv~csv']
+    s: data:Station/$(nombre-uri)
+    po:
+      - [a, metro:Station]
+      - [rdfs:label, $(nombre)]
+      - [metro:belongsToLine, data:Line/$(linea-uri)~iri]
+      - [metro:openingYear, $(año), xsd:gYear]
+      - [metro:locatedIn, $(alcaldias)]
+      - [metro:stationType, $(tipo)]
+      - [owl:sameAs, $(same_as_wikidata_nombre)~iri]
+      - [owl:sameAs, $(same_as_wikidata_linea)~iri]
+      - [owl:sameAs, $(same_as_wikidata_alcaldia-1)~iri]
+      - [owl:sameAs, $(same_as_wikidata_alcaldia-2)~iri]
+
+  afluencia:
+    sources:
+      - ['afluencia-media-mensual-wikiConnected.csv~csv']
+    s: data:Observation/$(anio)/$(mes)/$(estacion-uri)
+    po:
+      - [a, metro:Observation]
+      - [metro:year, $(anio), xsd:gYear]
+      - [metro:month, $(mes)]
+      - [metro:amount, $(afluencia-media), xsd:double]
+      - [metro:associatedStation, data:Station/$(estacion-uri)~iri]
+      - [owl:sameAs, $(same_as_wikidata_linea)~iri]
+      - [owl:sameAs, $(same_as_wikidata_estaciones)~iri]

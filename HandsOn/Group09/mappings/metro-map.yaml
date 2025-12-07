@@ -1,0 +1,29 @@
+prefixes:
+  metro: "https://grupo09.github.io/HandsOn/ontology#"
+  data: "https://grupo09.github.io/HandsOn/data/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+
+mappings:
+  stations:
+    sources:
+      - ['lineas-estaciones-metro-updated.csv~csv']
+    s: data:Station/$(nombre-uri)
+    po:
+      - [a, metro:Station]
+      - [rdfs:label, $(nombre)]
+      - [metro:belongsToLine, data:Line/$(linea-uri)~iri]
+      - [metro:openingYear, $(año), xsd:gYear]
+      - [metro:locatedIn, $(alcaldias)]
+      - [metro:stationType, $(tipo)]
+
+  afluencia:
+    sources:
+      - ['afluencia-media-mensual.csv~csv']
+    s: data:Observation/$(anio)/$(mes)/$(estacion-uri)
+    po:
+      - [a, metro:Observation]
+      - [metro:year, $(anio), xsd:gYear]
+      - [metro:month, $(mes)]
+      - [metro:amount, $(afluencia-media), xsd:double]
+      - [metro:associatedStation, data:Station/$(estacion-uri)~iri]
