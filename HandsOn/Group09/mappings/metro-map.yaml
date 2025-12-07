@@ -19,11 +19,12 @@ mappings:
 
   afluencia:
     sources:
-      - ['afluencia-media-mensual.csv~csv']
+      - ['afluencia-media-mensual-mesUpdated.csv~csv']
     s: data:Observation/$(anio)/$(mes)/$(estacion-uri)
     po:
       - [a, metro:Observation]
       - [metro:year, $(anio), xsd:gYear]
-      - [metro:month, $(mes)]
+      - [metro:month, $(mes), xsd:string]
+      - [metro:yearMonth, $(yearMonth), xsd:gYearMonth]
       - [metro:amount, $(afluencia-media), xsd:double]
       - [metro:associatedStation, data:Station/$(estacion-uri)~iri]

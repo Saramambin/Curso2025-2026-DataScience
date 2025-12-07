@@ -9,14 +9,14 @@ prefixes:
 mappings:
   stations:
     sources:
-      - ['lineas-estaciones-wikiConnected.csv~csv']
+      - ['lineas-estaciones-with-links.csv~csv']
     s: data:Station/$(nombre-uri)
     po:
       - [a, metro:Station]
       - [rdfs:label, $(nombre)]
       - [metro:belongsToLine, data:Line/$(linea-uri)~iri]
       - [metro:openingYear, $(año), xsd:gYear]
-      - [metro:locatedIn, $(alcaldias)]
+      - [metro:locatedIn, $(alcaldias-uri)]
       - [metro:stationType, $(tipo)]
       - [owl:sameAs, $(same_as_wikidata_nombre)~iri]
       - [owl:sameAs, $(same_as_wikidata_linea)~iri]
@@ -25,12 +25,13 @@ mappings:
 
   afluencia:
     sources:
-      - ['afluencia-media-mensual-wikiConnected.csv~csv']
+      - ['afluencia-media-mensual-with-links.csv~csv']
     s: data:Observation/$(anio)/$(mes)/$(estacion-uri)
     po:
       - [a, metro:Observation]
       - [metro:year, $(anio), xsd:gYear]
-      - [metro:month, $(mes)]
+      - [metro:month, $(mes), xsd:string]
+      - [metro:yearMonth, $(yearMonth), xsd:gYearMonth]
       - [metro:amount, $(afluencia-media), xsd:double]
       - [metro:associatedStation, data:Station/$(estacion-uri)~iri]
       - [owl:sameAs, $(same_as_wikidata_linea)~iri]
