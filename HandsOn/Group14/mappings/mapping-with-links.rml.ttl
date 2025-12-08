@@ -129,7 +129,7 @@ map:om_022 rml:reference "positiva_alcohol" ;
 	rr:termType rr:Literal .
 
 map:om_023 rdf:type rr:ObjectMap ;
-	rr:constant "ns:Localización" ;
+	rr:constant "ns:Localizacion" ;
 	rr:termType rr:Literal .
 
 map:om_024 rdf:type rr:ObjectMap ;
@@ -138,7 +138,7 @@ map:om_024 rdf:type rr:ObjectMap ;
 
 map:om_025 rml:reference "numero" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:integer ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_026 rdf:type rr:ObjectMap ;
@@ -338,7 +338,7 @@ map:pm_039 rdf:type rr:PredicateMap ;
 	rr:constant <ns:latitud> .
 
 map:pm_040 rdf:type rr:PredicateMap ;
-	rr:constant <ns:tieneFechaInstalación> .
+	rr:constant <ns:tieneFechaInstalacion> .
 
 map:pm_041 rdf:type rr:PredicateMap ;
 	rr:constant owl:sameAs .
@@ -534,4 +534,3 @@ map:source_000 rml:referenceFormulation ql:CSV ;
 map:source_001 rml:referenceFormulation ql:CSV ;
 	rml:source "semaforos_bici-with-links.csv" ;
 	rdf:type rml:LogicalSource .
-
