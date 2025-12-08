@@ -7,7 +7,7 @@
 ns: a owl:Ontology ;
     mod:createdWith <https://chowlk.linkeddata.es/> .
 
-#                     CLASES
+# CLASES
 
 ns:Accidente a owl:Class ;
     rdfs:label "Accidente" .
@@ -59,7 +59,7 @@ ns:TipoVehiculo a owl:Class ;
     rdfs:label "Tipo Vehiculo" .
 
 
-#                   INDIVIDUOS
+# INDIVIDUOS
 
 ns:2200PeatonBici a ns:TipoSemaforo ;
     rdfs:label "2200 Peaton Bici" .
@@ -74,11 +74,18 @@ ns:3200Bici a ns:TipoSemaforo ;
     rdfs:label "3200 Bici" .
 
 
-#              OBJECT PROPERTIES
+# OBJECT PROPERTIES
 
 ns:enDistrito a owl:ObjectProperty ;
     rdfs:label "en distrito" ;
-    rdfs:range ns:Distrito .
+    rdfs:range ns:Distrito ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            ns:Accidente
+            ns:CruceSemaforoBici
+        )
+    ] .
 
 ns:hasDate a owl:ObjectProperty ;
     rdfs:label "has date" ;
@@ -112,13 +119,14 @@ ns:requiredTest a owl:ObjectProperty ;
 
 ns:tieneCoordenadas a owl:ObjectProperty ;
     rdfs:label "tiene coordenadas" ;
-    rdfs:domain ns:Localizacion ;
-    rdfs:range ns:Coordenadas .
-
-ns:tieneCoordenadas a owl:ObjectProperty ;
-    rdfs:label "tiene coordenadas" ;
-    rdfs:domain ns:CruceSemaforoBici ;
-    rdfs:range ns:Coordenadas .
+    rdfs:range ns:Coordenadas ; 
+    rdfs:domain [ 
+        a owl:Class ;
+        owl:unionOf (
+            ns:Localizacion
+            ns:CruceSemaforoBici
+        )
+    ] .
 
 ns:tieneFechaInstalacion a owl:ObjectProperty ;
     rdfs:label "tiene fecha instalacion" ;
@@ -130,7 +138,7 @@ ns:tieneTipoSemaforo a owl:ObjectProperty ;
     rdfs:domain ns:CruceSemaforoBici ;
     rdfs:range ns:TipoSemaforo .
 
-#             DATATYPE PROPERTIES 
+# DATATYPE PROPERTIES 
 
 ns:alcohol a owl:DatatypeProperty ;
     rdfs:label "alcohol" ;
