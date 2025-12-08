@@ -36,7 +36,7 @@ mappings:
       - [ns:alcohol, $(positiva_alcohol), xsd:boolena]     
       - [ns:ocurreEn, ns:Localizacion]
       - [ns:Localización, ns:hasNumber]
-      - [ns:hasNumber, $(numero), xsd:integer]
+      - [ns:hasNumber, $(numero), xsd:string]
       - [ns:Coordenadas, ns:longitud]
       - [ns:Coordenadas, ns:latitud]
       - [ns:longitud, $(longitud), xsd:float]      
