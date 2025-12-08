@@ -12,35 +12,17 @@ WHERE {
 LIMIT 20
 
 #2
-SELECT ?o
+SELECT ?accidente ?tipo
 WHERE {
-?s a hasDate  
-?s ?p ?o 
+    ?accidente a <ns:Accidente> ;
+               <ns:tipoAccidente> ?tipo .
 }
 LIMIT 20
 
 #3
-SELECT ?accidente ?tipo
+SELECT ?accidente
 WHERE {
-    ?accidente a ns:Accidente ;
-               ns:tipoAccidente ?tipo .
+    ?accidente a <ns:Accidente> ;
 }
 LIMIT 20
 
-#4
-SELECT ?accidente ?distritoName
-WHERE {
-    ?accidente a ns:Accidente ;
-               ns:enDistrito ?distrito .
-    ?distrito ns:distritoNombre ?distritoName .
-}
-LIMIT 20
-
-#5
-SELECT ?accidente ?distritoName
-WHERE {
-    ?accidente a ns:Accidente ;
-               ns:enDistrito ?distrito .
-    ?distrito ns:distritoNombre ?distritoName .
-}
-LIMIT 20
