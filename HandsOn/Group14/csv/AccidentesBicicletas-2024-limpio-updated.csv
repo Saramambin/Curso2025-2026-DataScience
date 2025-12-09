@@ -1,4 +1,4 @@
-num_expediente,fecha,hora,localizacion,numero,cod_distrito,distrito,tipo_accidente,estado_meteorológico,tipo_vehiculo,tipo_persona,rango_edad,sexo,cod_lesividad,lesividad,longitud,latitud,positiva_alcohol,positiva_droga
+num_expediente,fecha,hora,localizacion,numero,cod_distrito,distrito,tipo_accidente,estado_meteorologico,tipo_vehiculo,tipo_persona,rango_edad,sexo,cod_lesividad,lesividad,longitud,latitud,positiva_alcohol,positiva_droga
 2023S040309,15/02/2024,14:05:00,CALL. TESORO / CALL. MINAS,18,1,CENTRO,Colisión fronto-lateral,Lluvia débil,Bicicleta,Conductor,De 25 a 29 años,Hombre,7,Asistencia sanitaria sólo en el lugar del accidente,-3.70585962201,40.425009251980356,false,false
 2024S000027,01/01/2024,16:30:00,CALL. ALEJANDRO MORAN / CALL. GENERAL RICARDOS,2,11,CARABANCHEL,Colisión fronto-lateral,Despejado,Bicicleta EPAC (pedaleo asistido),Conductor,De 25 a 29 años,Hombre,7,Asistencia sanitaria sólo en el lugar del accidente,-3.73363439871,40.387142474081976,false,false
 2024S000058,02/01/2024,9:45:00,GTA. LOZARES / AVDA. REAL DE PINTO,0,17,VILLAVERDE,Caída,Despejado,Bicicleta,Conductor,De 70 a 74 años,Hombre,2,Ingreso inferior o igual a 24 horas,-3.70763346887,40.339979587924894,false,false
@@ -908,3 +908,4 @@ num_expediente,fecha,hora,localizacion,numero,cod_distrito,distrito,tipo_acciden
 2024S035344,28/12/2024,23:05:00,"CALL. GRAN VIA, 64",64,1,CENTRO,Colisión lateral,Despejado,Bicicleta,Conductor,De 21 a 24 años,Hombre,7,Asistencia sanitaria sólo en el lugar del accidente,-3.70884746879,40.42215312658358,false,false
 2024S035369,30/12/2024,12:30:00,CTRA. VILLAVERDE A VALLECAS / PLAZA. CHOZAS DE CANALES,1,17,VILLAVERDE,Caída,Despejado,Bicicleta,Conductor,De 65 a 69 años,Hombre,1,Atención en urgencias sin posterior ingreso,-3.69178286148,40.352327925145836,false,false
 2024S035425,31/12/2024,13:55:00,"GTA. CUATRO CAMINOS, 4",4,6,TETUÁN,Alcance,Despejado,Bicicleta,Conductor,De 65 a 69 años,Hombre,2,Ingreso inferior o igual a 24 horas,-3.70409874175,40.447191169559886,false,false
+
