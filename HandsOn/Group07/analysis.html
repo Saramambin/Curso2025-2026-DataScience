@@ -157,9 +157,47 @@
     </em>
   </p>
 
+<h2>4. Linking strategy and external datasets</h2>
+
+<p>
+  In the generated RDF we will create explicit links between instances in our dataset and
+  entities already published in other Linked Data sources. The main classes that will be
+  linked are:
+</p>
+
+<ul>
+  <li>
+    <strong>aq:Station</strong> (air quality monitoring stations).<br>
+    Each station instance
+    <code>https://carloscumbrado.github.io/HandsOn/group07/resource/Station/{stationCode}</code>
+    will be linked to a geographic entity in <strong>Wikidata</strong> that represents the
+    district or municipality where the station is located (e.g. Madrid → <code>wd:Q2807</code>).
+  </li>
+
+  <li>
+    <strong>aq:Pollutant</strong> (NO₂, O₃, PM₁₀, SO₂, CO, etc.).<br>
+    Each pollutant instance
+    <code>.../resource/Pollutant/{pollutantCode}</code> will be linked with the
+    corresponding concept in <strong>Wikidata</strong> (for example, NO₂ → <code>wd:Q190016</code>,
+    O₃ → <code>wd:Q132132</code>, PM₁₀ → <code>wd:Q181237</code>).
+  </li>
+
+  <li>
+    <strong>Geographical entities</strong> related to stations (districts or neighbourhoods),
+    which can be aligned with Wikidata or other Spanish open data portals that publish
+    administrative divisions.
+  </li>
+</ul>
+
+<p>
+  These links will be expressed using properties such as <code>owl:sameAs</code> or
+  <code>schema:relatedPlace</code>, so that applications can combine our air quality
+  observations with additional information (population, area, other environmental indicators,
+  etc.) from these external datasets.
+</p>
 
   
-  <h2>4. Conclusions</h2>
+  <h2>5. Conclusions</h2>
   <p>
     The <strong>Air Quality in Madrid (2024)</strong> dataset meets all requirements for Linked Data generation.
     It will be transformed into RDF using the defined ontology, modeling air quality observations, pollutants, and stations.
