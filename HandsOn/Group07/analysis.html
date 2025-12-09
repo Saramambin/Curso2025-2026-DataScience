@@ -160,40 +160,61 @@
 <h2>4. Linking strategy and external datasets</h2>
 
 <p>
-  In the generated RDF we will create explicit links between instances in our dataset and
-  entities already published in other Linked Data sources. The main classes that will be
-  linked are:
+  The linking strategy in this project focuses primarily on creating a
+  coherent and well-connected internal knowledge graph. All entities
+  generated from the CSV dataset (stations, pollutants and daily observations)
+  are assigned stable URIs under:
+</p>
+
+<p>
+  <code>https://carloscumbrado.github.io/HandsOn/group07/resource/</code>
+</p>
+
+<p>
+  Internal links are consistently created using relations such as:
+</p>
+
+<ul>
+  <li><code>aq:hasStation</code> – connects each observation to the station where the measurement was made.</li>
+  <li><code>aq:measuresPollutant</code> – links observations with their corresponding pollutant.</li>
+  <li><code>aq:hasDate</code>, <code>aq:hasValue</code> and <code>aq:hasUnit</code> – provide typed attributes describing each measurement.</li>
+</ul>
+
+<p>
+  This ensures that every observation in the dataset is fully linked to its
+  contextual entities, forming a structured and navigable graph.
+</p>
+
+<h3>External linking</h3>
+
+<p>
+  While external linking was considered during the design phase, implementing
+  it would require additional information that is not included in the source CSV.
+  In particular:
 </p>
 
 <ul>
   <li>
-    <strong>aq:Station</strong> (air quality monitoring stations).<br>
-    Each station instance
-    <code>https://carloscumbrado.github.io/HandsOn/group07/resource/Station/{stationCode}</code>
-    will be linked to a geographic entity in <strong>Wikidata</strong> that represents the
-    district or municipality where the station is located (e.g. Madrid → <code>wd:Q2807</code>).
+    <strong>Pollutants:</strong> The dataset identifies pollutants only by numeric
+    codes (e.g. <em>12, 14, 8</em>). Since it does not provide the corresponding
+    chemical names (NO₂, O₃, PM₁₀, etc.), linking them reliably to Wikidata or
+    DBpedia would require an external lookup table that is not part of the assignment.
   </li>
 
   <li>
-    <strong>aq:Pollutant</strong> (NO₂, O₃, PM₁₀, SO₂, CO, etc.).<br>
-    Each pollutant instance
-    <code>.../resource/Pollutant/{pollutantCode}</code> will be linked with the
-    corresponding concept in <strong>Wikidata</strong> (for example, NO₂ → <code>wd:Q190016</code>,
-    O₃ → <code>wd:Q132132</code>, PM₁₀ → <code>wd:Q181237</code>).
-  </li>
-
-  <li>
-    <strong>Geographical entities</strong> related to stations (districts or neighbourhoods),
-    which can be aligned with Wikidata or other Spanish open data portals that publish
-    administrative divisions.
+    <strong>Stations:</strong> The CSV does not include geographical coordinates or
+    district names for the air-quality stations. Without this information, linking
+    stations to external datasets such as Wikidata or OpenStreetMap would be speculative
+    and therefore incorrect.
   </li>
 </ul>
 
 <p>
-  These links will be expressed using properties such as <code>owl:sameAs</code> or
-  <code>schema:relatedPlace</code>, so that applications can combine our air quality
-  observations with additional information (population, area, other environmental indicators,
-  etc.) from these external datasets.
+  For these reasons, no <em>owl:sameAs</em> links to external sources were added.
+  However, the adopted URI structure and ontology design make the dataset easy to
+  extend in future work. If additional metadata (chemical identifiers, coordinates)
+  becomes available, external linking can be incorporated without modifying the
+  existing graph.
 </p>
 
   
