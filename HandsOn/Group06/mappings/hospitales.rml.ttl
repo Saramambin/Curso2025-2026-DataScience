@@ -152,6 +152,6 @@ map:s_000 rdf:type rr:SubjectMap ;
 	rr:template "https://knowledge.graphs/Group06/ontology#Hospitales/{Nombre}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
-	rml:source "source_3.csv" ;
+	rml:source "../csv/hospitales-updated.csv" ;
 	rdf:type rml:LogicalSource .
 
