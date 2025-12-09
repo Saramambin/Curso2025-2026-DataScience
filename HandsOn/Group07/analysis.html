@@ -157,9 +157,68 @@
     </em>
   </p>
 
+<h2>4. Linking strategy and external datasets</h2>
+
+<p>
+  The linking strategy in this project focuses primarily on creating a
+  coherent and well-connected internal knowledge graph. All entities
+  generated from the CSV dataset (stations, pollutants and daily observations)
+  are assigned stable URIs under:
+</p>
+
+<p>
+  <code>https://carloscumbrado.github.io/HandsOn/group07/resource/</code>
+</p>
+
+<p>
+  Internal links are consistently created using relations such as:
+</p>
+
+<ul>
+  <li><code>aq:hasStation</code> – connects each observation to the station where the measurement was made.</li>
+  <li><code>aq:measuresPollutant</code> – links observations with their corresponding pollutant.</li>
+  <li><code>aq:hasDate</code>, <code>aq:hasValue</code> and <code>aq:hasUnit</code> – provide typed attributes describing each measurement.</li>
+</ul>
+
+<p>
+  This ensures that every observation in the dataset is fully linked to its
+  contextual entities, forming a structured and navigable graph.
+</p>
+
+<h3>External linking</h3>
+
+<p>
+  While external linking was considered during the design phase, implementing
+  it would require additional information that is not included in the source CSV.
+  In particular:
+</p>
+
+<ul>
+  <li>
+    <strong>Pollutants:</strong> The dataset identifies pollutants only by numeric
+    codes (e.g. <em>12, 14, 8</em>). Since it does not provide the corresponding
+    chemical names (NO₂, O₃, PM₁₀, etc.), linking them reliably to Wikidata or
+    DBpedia would require an external lookup table that is not part of the assignment.
+  </li>
+
+  <li>
+    <strong>Stations:</strong> The CSV does not include geographical coordinates or
+    district names for the air-quality stations. Without this information, linking
+    stations to external datasets such as Wikidata or OpenStreetMap would be speculative
+    and therefore incorrect.
+  </li>
+</ul>
+
+<p>
+  For these reasons, no <em>owl:sameAs</em> links to external sources were added.
+  However, the adopted URI structure and ontology design make the dataset easy to
+  extend in future work. If additional metadata (chemical identifiers, coordinates)
+  becomes available, external linking can be incorporated without modifying the
+  existing graph.
+</p>
 
   
-  <h2>4. Conclusions</h2>
+  <h2>5. Conclusions</h2>
   <p>
     The <strong>Air Quality in Madrid (2024)</strong> dataset meets all requirements for Linked Data generation.
     It will be transformed into RDF using the defined ontology, modeling air quality observations, pollutants, and stations.
