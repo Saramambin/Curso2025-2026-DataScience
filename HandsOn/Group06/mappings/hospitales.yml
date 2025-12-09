@@ -1,15 +1,13 @@
 prefixes:
-  rr: http://www.w3.org/ns/r2rml#
-  rml: http://semweb.mmlab.be/ns/rml#
-  ql: http://semweb.mmlab.be/ns/ql#
+  ns: https://knowledge.graphs/HandsOn/Group06/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
-  ns: http://www.owl-ontologies.com/ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   
 mappings:
   HospitalMapping:
     sources:
       - ['csv/hospitales-updated.csv~csv']
-    s: http://www.owl-ontologies.com/ns#Hospital/$(Nombre)
+    s: ns:Hospitales/$(Nombre)
     po:
       - [a, ns:Hospital]
       - [ns:isNamed, $(Nombre), xsd:string]
@@ -22,4 +20,3 @@ mappings:
       - [ns:tieneCodigodeBarrio, $(codbarrio), xsd:integer]
       - [ns:tieneCoddistBarrio, $(coddistbar), xsd:integer]
       - [ns:tieneCodigodistrito, $(coddistrit), xsd:integer]
-      - [ns:hasShape, $(Geo Shape), xsd:string]

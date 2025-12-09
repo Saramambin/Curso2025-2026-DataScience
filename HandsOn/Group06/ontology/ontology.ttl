@@ -1,4 +1,3 @@
-@prefix : <http@base:/> .
 @prefix mod: <https://w3id.org/mod#> .
 @prefix ns: <http://knowlegde.graphs/Group06/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
