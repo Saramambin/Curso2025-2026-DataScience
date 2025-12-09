@@ -1,4 +1,4 @@
-@prefix ns: <http://knowlegde.graphs/Group06/ontology#> .
+@prefix ns: <http://knowledge.graphs/Group06/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,7 +8,7 @@ ns:estaEnbarrio a owl:ObjectProperty ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Barrio .
 
-ns:hasBeds a owl:ObjectProperty ;
+ns:hasBeds a owl:DatatypeProperty ;
     rdfs:label "has beds" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Camas .
@@ -18,12 +18,12 @@ ns:isFinancedby a owl:ObjectProperty ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Financiaci .
 
-ns:isLocatedin a owl:ObjectProperty ;
+ns:isLocatedin a owl:DatatypeProperty ;
     rdfs:label "is locatedin" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Direccion .
 
-ns:isNamed a owl:ObjectProperty ;
+ns:isNamed a owl:DatatypeProperty ;
     rdfs:label "is named" ;
     rdfs:domain ns:Hospital ;
     rdfs:range ns:Nombre .

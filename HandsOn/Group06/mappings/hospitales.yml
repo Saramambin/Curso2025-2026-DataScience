@@ -1,5 +1,5 @@
 prefixes:
-  ns: https://knowledge.graphs/HandsOn/Group06/ontology#
+  ns: https://knowledge.graphs/Group06/ontology#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   
