@@ -24,7 +24,6 @@ mappings:
     po:
       - [a, metro:Observation]
       - [metro:year, $(anio), xsd:gYear]
-      - [metro:month, $(mes), xsd:string]
-      - [metro:yearMonth, $(yearMonth), xsd:gYearMonth]
+      - [metro:month, $(mes), xsd:gMonth]
       - [metro:amount, $(afluencia-media), xsd:double]
       - [metro:associatedStation, data:Station/$(estacion-uri)~iri]

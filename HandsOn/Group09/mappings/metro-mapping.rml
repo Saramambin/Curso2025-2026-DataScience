@@ -12,7 +12,7 @@
 map:map_afluencia_000 rml:logicalSource map:source_001 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "afluencia" ;
-	rr:predicateObjectMap map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010, map:pom_011 ;
+	rr:predicateObjectMap map:pom_006, map:pom_007, map:pom_008, map:pom_009, map:pom_010 ;
 	rr:subjectMap map:s_001 .
 
 map:map_stations_000 rml:logicalSource map:source_000 ;
@@ -57,20 +57,15 @@ map:om_007 rml:reference "anio" ;
 
 map:om_008 rml:reference "mes" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:string ;
+	rr:datatype xsd:gMonth ;
 	rr:termType rr:Literal .
 
-map:om_009 rml:reference "yearMonth" ;
-	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:gYearMonth ;
-	rr:termType rr:Literal .
-
-map:om_010 rml:reference "afluencia-media" ;
+map:om_009 rml:reference "afluencia-media" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:double ;
 	rr:termType rr:Literal .
 
-map:om_011 rdf:type rr:ObjectMap ;
+map:om_010 rdf:type rr:ObjectMap ;
 	rr:template "https://grupo09.github.io/HandsOn/data/Station/{estacion-uri}" ;
 	rr:termType rr:IRI .
 
@@ -102,12 +97,9 @@ map:pm_008 rdf:type rr:PredicateMap ;
 	rr:constant metro:month .
 
 map:pm_009 rdf:type rr:PredicateMap ;
-	rr:constant metro:yearMonth .
-
-map:pm_010 rdf:type rr:PredicateMap ;
 	rr:constant metro:amount .
 
-map:pm_011 rdf:type rr:PredicateMap ;
+map:pm_010 rdf:type rr:PredicateMap ;
 	rr:constant metro:associatedStation .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
@@ -153,10 +145,6 @@ map:pom_009 rdf:type rr:PredicateObjectMap ;
 map:pom_010 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_010 ;
 	rr:predicateMap map:pm_010 .
-
-map:pom_011 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_011 ;
-	rr:predicateMap map:pm_011 .
 
 map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_afluencia_000, map:map_stations_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .

@@ -13,7 +13,7 @@
 map:map_afluencia_000 rml:logicalSource map:source_001 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "afluencia" ;
-	rr:predicateObjectMap map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015, map:pom_016, map:pom_017 ;
+	rr:predicateObjectMap map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015, map:pom_016 ;
 	rr:subjectMap map:s_001 .
 
 map:map_stations_000 rml:logicalSource map:source_000 ;
@@ -74,28 +74,23 @@ map:om_011 rml:reference "anio" ;
 
 map:om_012 rml:reference "mes" ;
 	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:string ;
+	rr:datatype <gMonth> ;
 	rr:termType rr:Literal .
 
-map:om_013 rml:reference "yearMonth" ;
-	rdf:type rr:ObjectMap ;
-	rr:datatype xsd:gYearMonth ;
-	rr:termType rr:Literal .
-
-map:om_014 rml:reference "afluencia-media" ;
+map:om_013 rml:reference "afluencia-media" ;
 	rdf:type rr:ObjectMap ;
 	rr:datatype xsd:double ;
 	rr:termType rr:Literal .
 
-map:om_015 rdf:type rr:ObjectMap ;
+map:om_014 rdf:type rr:ObjectMap ;
 	rr:template "https://grupo09.github.io/HandsOn/data/Station/{estacion-uri}" ;
 	rr:termType rr:IRI .
 
-map:om_016 rml:reference "same_as_wikidata_linea" ;
+map:om_015 rml:reference "same_as_wikidata_linea" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
-map:om_017 rml:reference "same_as_wikidata_estaciones" ;
+map:om_016 rml:reference "same_as_wikidata_estaciones" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:IRI .
 
@@ -139,18 +134,15 @@ map:pm_012 rdf:type rr:PredicateMap ;
 	rr:constant metro:month .
 
 map:pm_013 rdf:type rr:PredicateMap ;
-	rr:constant metro:yearMonth .
-
-map:pm_014 rdf:type rr:PredicateMap ;
 	rr:constant metro:amount .
 
-map:pm_015 rdf:type rr:PredicateMap ;
+map:pm_014 rdf:type rr:PredicateMap ;
 	rr:constant metro:associatedStation .
 
-map:pm_016 rdf:type rr:PredicateMap ;
+map:pm_015 rdf:type rr:PredicateMap ;
 	rr:constant owl:sameAs .
 
-map:pm_017 rdf:type rr:PredicateMap ;
+map:pm_016 rdf:type rr:PredicateMap ;
 	rr:constant owl:sameAs .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
@@ -220,10 +212,6 @@ map:pom_015 rdf:type rr:PredicateObjectMap ;
 map:pom_016 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_016 ;
 	rr:predicateMap map:pm_016 .
-
-map:pom_017 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_017 ;
-	rr:predicateMap map:pm_017 .
 
 map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_afluencia_000, map:map_stations_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
