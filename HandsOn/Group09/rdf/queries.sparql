@@ -1,0 +1,40 @@
+PREFIX metro: <https://grupo09.github.io/HandsOn/ontology#>
+PREFIX data:  <https://grupo09.github.io/HandsOn/data/>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+# Q1: Top 10 estaciones con más afluencia en un año concreto
+SELECT ?station ?label (SUM(?amount) AS ?totalAmount)
+WHERE {
+  ?obs a metro:Observation ;
+       metro:year ?year ;
+       metro:amount ?amount ;
+       metro:associatedStation ?station .
+  ?station rdfs:label ?label .
+  FILTER(?year = "2019"^^xsd:gYear)
+}
+GROUP BY ?station ?label
+ORDER BY DESC(?totalAmount)
+LIMIT 10
+
+# Q2: Estaciones con línea y alcaldía
+SELECT ?station ?label ?line ?alcaldia
+WHERE {
+  ?station a metro:Station ;
+           rdfs:label ?label ;
+           metro:belongsToLine ?line ;
+           metro:locatedIn ?alcaldia .
+}
+ORDER BY ?line ?label
+LIMIT 50
+
+# Q3: Estaciones por línea (número de estaciones por línea)
+SELECT ?line (COUNT(DISTINCT ?station) AS ?numStations)
+WHERE {
+  ?station a metro:Station ;
+           metro:belongsToLine ?line .
+}
+GROUP BY ?line
+ORDER BY ?line

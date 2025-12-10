@@ -1,0 +1,45 @@
+PREFIX ns1: <https://grupo09.github.io/HandsOn/ontology#>
+PREFIX data:  <https://grupo09.github.io/HandsOn/data/>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+
+# Query 1: número total de enlaces owl:sameAs en el KG
+SELECT (COUNT(*) AS ?numSameAs)
+WHERE {
+  ?s owl:sameAs ?o .
+}
+
+
+# Query 2: muestra de estaciones y su enlace a Wikidata
+SELECT ?station ?label ?wikidata
+WHERE {
+  ?station a ns1:Station ;
+           rdfs:label ?label ;
+           owl:sameAs ?wikidata .
+}
+ORDER BY ?label
+LIMIT 20
+
+# Query 3:Observaciones con owl:sameAs y propiedades
+SELECT ?station ?same
+WHERE {
+  ?station rdf:type ns1:Station .
+  ?station owl:sameAs ?same .
+} LIMIT 20
+
+# Query 4:Estaciones con equivalencias externas
+SELECT ?obs ?year ?month ?amount ?same
+WHERE {
+  ?obs rdf:type ns1:Observation .
+  ?obs ns1:year ?year .
+  ?obs ns1:month ?month .
+  ?obs ns1:amount ?amount .
+  ?obs owl:sameAs ?same .
+}
+ORDER BY ?year ?month 
+LIMIT 20
+
+
