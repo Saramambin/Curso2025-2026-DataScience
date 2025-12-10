@@ -9,7 +9,7 @@ Original file is located at
 **Task 07: Querying RDF(s)**
 """
 
-# !pip install rdflib
+# pip install rdflib
 import urllib.request
 url = 'https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2025-2026/refs/heads/master/Assignment4/course_materials/python/validation.py'
 urllib.request.urlretrieve(url, 'validation.py')
@@ -33,16 +33,13 @@ report = Report()
 
 # TO DO
 result = [] #list of tuples
-classes = set(g.subjects(RDF.type, RDFS.Class))
-classes.update(g.subjects(RDFS.subClassOf, None))
-for c in classes:
-    superclasses = list(g.objects(c, RDFS.subClassOf))
-    if not superclasses:
-        result.append((c, None))
-    else:
-        for sc in superclasses:
-            result.append((c, sc))
-# Visualize the results
+for clase in g.subjects(RDF.type, RDFS.Class):
+  super = g.value(clase, RDFS.subClassOf)
+  if super:
+    result.append((clase, super))
+  else:
+    result.append((clase,None))
+print(result)
 for r in result:
   print(r)
 
