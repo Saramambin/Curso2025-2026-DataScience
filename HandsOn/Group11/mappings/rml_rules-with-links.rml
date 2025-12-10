@@ -19,7 +19,6 @@
     rr:predicate st:hasID ;
     rr:objectMap [
       rml:reference "ID" ;
-      rr:datatype xsd:integer
     ]
   ] ;
 
@@ -102,3 +101,4 @@
       rml:reference "COORDENADAS"
     ]
   ] .
+
