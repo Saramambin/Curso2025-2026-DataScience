@@ -9,25 +9,25 @@ prefixes:
   rml: http://semweb.mmlab.be/ns/rml#
   ql: http://semweb.mmlab.be/ns/ql#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  vocab: http://example.org#
+  vocab: http://my.domain/Alquiler#
   
 mappings:
   triplesmap1:
     sources:
       - [datsetbarrios-updated.csv~csv]
-    s: http://example.org/observation/$(barrio)/$(anyo)/$(trimestre)
+    s: http://my.domain/Alquiler/$(barrio)/$(anyo)/$(trimestre)
     po:
-      - [a, vocab:HousingObservation]
+      - [a, vocab:Viviendas_en_Alquiler]
       - [vocab:year, $(anyo), xsd:integer]
       - [vocab:quarter, $(trimestre), xsd:integer]
       - [vocab:numberOfDwellings, $(num_viviendas), xsd:integer]
       - [vocab:sizeInMeters, $(metros_2), xsd:integer]
-      - [vocab:bedrooms, $(dormitorios)]
-      - [vocab:bathrooms, $(banyos)]
+      - [vocab:bedrooms, $(dormitorios), xsd:float]
+      - [vocab:bathrooms, $(banyos), xsd:float]
       - [vocab:avgRent, $(renta_media), xsd:integer]
       - [vocab:minRent, $(renta_min), xsd:integer]
       - [vocab:maxRent, $(renta_max), xsd:integer]
-      - [vocab:pricePerM2, $(euros_m2)]
+      - [vocab:pricePerM2, $(euros_m2),xsd:float]
       - [vocab:stdDev, $(desv_tipica), xsd:integer]
       - p: vocab:locatedIn
         o:
@@ -36,7 +36,7 @@ mappings:
   triplesmap2:
     sources:
       - [datsetbarrios-updated.csv~csv]
-    s: http://example.org/neighborhood/$(barrio)
+    s: http://my.domain/Alquiler/$(barrio)
     po:
-      - [a, vocab:Neighborhood]
+      - [a, vocab:Viviendas_en_Alquiler]
       - [vocab:name, $(barrio)]
