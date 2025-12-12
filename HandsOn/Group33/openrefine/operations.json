@@ -1,70 +1,89 @@
-[
-  {
-    "op": "core/column-rename",
-    "oldColumnName": "FDIA",
-    "newColumnName": "fecha_dia",
-    "description": "Renombra la columna FDIA a fecha_dia"
-  },
-  {
-    "op": "core/column-rename",
-    "oldColumnName": "FEST",
-    "newColumnName": "codigo_estacion",
-    "description": "Renombra la columna FEST a codigo_estacion"
-  },
-  {
-    "op": "core/column-rename",
-    "oldColumnName": "FSEN",
-    "newColumnName": "sentido_codigo",
-    "description": "Renombra la columna FSEN a sentido_codigo"
-  },
-  {
-    "op": "core/transpose-columns-into-rows",
-    "startColumnName": "HOR1",
-    "columnCount": -1,
-    "ignoreBlankCells": true,
-    "fillDown": false,
-    "separator": null,
-    "keyColumnName": "Hora_Codigo",
-    "valueColumnName": "Valor_Intensidad",
-    "description": "Transponer las celdas de las columnas que empiezan por HOR1 en filas de dos nuevas columnas llamadas Hora_Codigo y Valor_Intensidad"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
+{
+  "description": "Limpieza segura de datos para el tráfico de Madrid - Grupo33 - Solo operaciones básicas",
+  "etiquetas": ["tráfico", "madrid", "grupo33", "limpieza segura"],
+  "operaciones": [
+    {
+      "op": "cambio de nombre de núcleo/columna",
+      "nombreDeColumnaAntigua": "FDIA",
+      "newColumnName": "fecha",
+      "description": "Renombra la columna FDIA a fecha"
     },
-    "columnName": "Valor_Intensidad",
-    "expression": "grel:value.replace(',', '.')",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Transforma el texto de las celdas en la columna Valor_Intensidad usando la expresión grel:value.replace(',', '.')"
-  },
-  {
-    "op": "core/column-addition",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
+    {
+      "op": "cambio de nombre de núcleo/columna",
+      "nombreDeColumnaAntigua": "FDIA",
+      "newColumnName": "fecha_dia",
+      "description": "Renombra la columna FDIA a fecha_dia"
     },
-    "baseColumnName": "fecha_dia",
-    "expression": "grel:value.split('/')[2] + '-' + value.split('/')[1] + '-' + value.split('/')[0] + 'T' + if(row.cells['Hora_Codigo'].value.replace('HOR','').length() == 1, '0' + row.cells['Hora_Codigo'].value.replace('HOR',''), row.cells['Hora_Codigo'].value.replace('HOR','')) + ':00:00'",
-    "onError": "set-to-blank",
-    "newColumnName": "FECHA_HORA_RDF",
-    "columnInsertIndex": 1,
-    "description": "Crear la columna FECHA_HORA_RDF en el índice 1 basada en la columna fecha_dia usando la expresión grel:value.split('/')[2] + '-' + value.split('/')[1] + '-' + value.split('/')[0] + 'T' + if(row.cells['Hora_Codigo'].value.replace('HOR','').length() == 1, '0' + row.cells['Hora_Codigo'].value.replace('HOR',''), row.cells['Hora_Codigo'].value.replace('HOR','')) + ':00:00'"
-  },
-  {
-    "op": "core/text-transform",
-    "engineConfig": {
-      "facets": [],
-      "mode": "row-based"
+    {
+      "op": "cambio de nombre de núcleo/columna",
+      "nombreDeColumnaAntigua": "FEST",
+      "newColumnName": "codigo_estacion",
+      "description": "Renombra la columna FEST a codigo_estacion"
     },
-    "columnName": "sentido_codigo",
-    "expression": "grel:if(value == \"1-\", \"Norte\", if(value == \"1=\", \"Sur\", if(value == \"2-\", \"Este\", if(value == \"2=\", \"Oeste\", value))))",
-    "onError": "keep-original",
-    "repeat": false,
-    "repeatCount": 10,
-    "description": "Transforma el texto de las celdas en la columna sentido_codigo usando la expresión grel:if(value == \"1-\", \"Norte\", if(value == \"1=\", \"Sur\", if(value == \"2-\", \"Este\", if(value == \"2=\", \"Oeste\", value))))"
+    {
+      "op": "cambio de nombre de núcleo/columna",
+      "nombreDeColumnaAntigua": "FSEN",
+      "newColumnName": "sentido_codigo",
+      "description": "Renombra la columna FSEN a sentido_codigo"
+    },
+    {
+      "op": "núcleo/transponer-columnas-en-filas",
+      "nombreDeColumnaInicio": "HOR1",
+      "columnCount": -1,
+      "ignoreBlankCells": true,
+      "fillDown": false,
+      "separador": null,
+      "keyColumnName": "Hora_Codigo",
+      "valueColumnName": "Valor_Intensidad",
+      "description": "Transponer las celdas de las columnas que empiezan por HOR1 en filas de dos nuevas columnas llamadas Hora_Codigo y Valor_Intensidad"
+    },
+    {
+      "op": "core/text-transform",
+      "columnName": "Valor_Intensidad",
+      "expresión": "grel:value.replace(',', '.')",
+      "onError": "mantener-original",
+      "description": "Transforma el texto de las celdas en la columna Valor_Intensidad usando la expresión grel:value.replace(',', '.')"
+    },
+    {
+      "op": "adición de núcleo/columna",
+      "baseColumnName": "fecha_dia",
+      "expresión": "grel:value.split('/')[2] + '-' + value.split('/')[1] + '-' + value.split('/')[0] + 'T' + if(row.cells['Hora_Codigo'].value.replace('HOR','').length() == 1, '0' + row.cells['Hora_Codigo'].value.replace('HOR',''), row.cells['Hora_Codigo'].value.replace('HOR','')) + ':00:00'",
+      "nuevoNombreColumna": "FECHA_HORA_RDF",
+      "columnaInsertarÍndice": 1,
+      "onError": "establecido en blanco",
+      "description": "Crear la columna FECHA_HORA_RDF en el índice 1 basada en la columna fecha_dia usando la expresión para combinar fecha y hora"
+    },
+    {
+      "op": "core/text-transform",
+      "columnName": "fecha",
+      "expresión": "value",
+      "onError": "mantener-original"
+    },
+    {
+      "op": "edición básica/masiva",
+      "columnName": "sentido_codigo",
+      "ediciones": [
+        {"desde": "1-", "hasta": "Norte"},
+        {"desde": "1=", "hasta": "Sur"},
+        {"desde": "2-", "hasta": "Este"},
+        {"desde": "2=", "hasta": "Oeste"}
+      ]
+    },
+    {
+      "op": "core/text-transform",
+      "columnName": "HOR1",
+      "expresión": "if(isNonBlank(value) && toNumber(value) >= 0, value, '0')",
+      "onError": "mantener-original"
+    }
+  ],
+  "opciones_de_importacion": {
+    "separador": ";",
+    "líneas_de_encabezado": 1,
+    "saltarLíneasDeDatos": 0,
+    "límite": -1,
+    "ignorarLíneas": -1,
+    "processQuotes": true,
+    "storeBlankRows": false,
+    "trimStrings": true
   }
-]
+}
