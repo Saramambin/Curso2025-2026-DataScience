@@ -7,7 +7,7 @@
 
 <#centrosEducativos> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "C:/Users/adria/Documents/GitHub/Curso2025-2026-DataScience/HandsOn/Group03/csv/centros-educativos-updated.csv" ;
+    rml:source "centros-educativos-updated.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
 
@@ -145,7 +145,7 @@
 
 <#municipios> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "C:/Users/adria/Documents/GitHub/Curso2025-2026-DataScience/HandsOn/Group03/csv/centros-educativos-updated.csv" ;
+    rml:source "centros-educativos-updated.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
 
@@ -173,7 +173,7 @@
 
 <#distritos> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "C:/Users/adria/Documents/GitHub/Curso2025-2026-DataScience/HandsOn/Group03/csv/centros-educativos-updated.csv" ;
+    rml:source "centros-educativos-updated.csv" ;
     rml:referenceFormulation ql:CSV
   ] ;
 
