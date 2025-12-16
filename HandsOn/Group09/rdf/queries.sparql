@@ -69,21 +69,8 @@ LIMIT 10
 
 # --- CONSULTAS ADICIONALES ---
 
-# Q1: Top 10 estaciones con más afluencia en un año concreto
-SELECT ?station ?label (SUM(?amount) AS ?totalAmount)
-WHERE {
-  ?obs a metro:Observation ;
-       metro:year ?year ;
-       metro:amount ?amount ;
-       metro:associatedStation ?station .
-  ?station rdfs:label ?label .
-  FILTER(?year = "2019"^^xsd:gYear)
-}
-GROUP BY ?station ?label
-ORDER BY DESC(?totalAmount)
-LIMIT 10
 
-# Q2: Estaciones con línea y alcaldía
+# Estaciones con línea y alcaldía
 SELECT ?station ?label ?line ?alcaldia
 WHERE {
   ?station a metro:Station ;
@@ -94,7 +81,7 @@ WHERE {
 ORDER BY ?line ?label
 LIMIT 50
 
-# Q3: Estaciones por línea (número de estaciones por línea)
+# Estaciones por línea (número de estaciones por línea)
 SELECT ?line (COUNT(DISTINCT ?station) AS ?numStations)
 WHERE {
   ?station a metro:Station ;
