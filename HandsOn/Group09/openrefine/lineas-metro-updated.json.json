@@ -185,5 +185,12 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Transforma el texto de las celdas en la columna linea-uri usando la expresión grel:'linea'+'-'+\nvalue"
+  },
+    {
+    "op": "core/column-rename",
+    "oldColumnName": "año",
+    "newColumnName": "anio",
+    "description": "Renombra la columna año a anio"
   }
+
 ]
