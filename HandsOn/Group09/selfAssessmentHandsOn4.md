@@ -1,25 +1,31 @@
-# Hands-on assignment 3 – Self assessment
+# Hands-on assignment 4 – Self assessment
 
 ## Checklist
 
-**Every resource described in the CSV file:**
+**Every RDF file:**
 
-- [x] Has a unique identifier in a column (not an auto-increased integer)
-- [x] Is related to a class in the ontology
+- [x] Uses the .ttl extension
+- [x] Is serialized in the Turtle format
+- [x] Follows the resource naming strategy
+- [x] Uses class and property URIs that are the same as those used in the ontology
 
-**Every class in the ontology:**
+**Every URI in the RDF files:**
 
-- [x] Is related to a resource described in the CSV file
+- [x] Is "readable" and has some meaning (e.g., it is not an auto-increased integer)
+- [x] Is not encoded as a string
+- [x] Does not contain a double slash (i.e., “//”)
 
-**Every column in the CSV file:**
+**Every individual in the RDF files:**
+
+- [x] Has a label with the name of the individual
+- [x] Has a type
+
+**Every value in the RDF files:**
 
 - [x] Is trimmed
 - [x] Is properly encoded (e.g., dates, booleans)
-- [x] Is related to a property in the ontology
-
-**Every property in the ontology:**
-
-- [x] Is related to a column in the CSV file
+- [x] Includes its datatype
+- [x] Uses the correct datatype (e.g., values of 0-1 may be booleans and not integers, not every string made of numbers is a number) 
 
 <!-- ## Comments on the self-assessment
 _(If required)_ -->

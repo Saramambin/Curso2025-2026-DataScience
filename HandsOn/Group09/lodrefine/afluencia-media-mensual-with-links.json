@@ -729,5 +729,33 @@
       }
     ],
     "description": "Editar celdas en masa en columna same_as_wikidata_linea"
+  },
+    {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "afluencia-media",
+          "expression": "value",
+          "columnName": "afluencia-media",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "0.0",
+                "l": "0.0"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
   }
 ]
