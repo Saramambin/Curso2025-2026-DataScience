@@ -160,74 +160,55 @@
 <h2>4. Linking strategy and external datasets</h2>
 
 <p>
-  The linking strategy in this project focuses primarily on creating a
-  coherent and well-connected internal knowledge graph. All entities
-  generated from the CSV dataset (stations, pollutants and daily observations)
-  are assigned stable URIs under:
+  The linking strategy focuses on enriching the dataset by connecting local entities
+  with external Linked Open Data sources where reliable identifiers are available.
 </p>
 
-<p>
-  <code>https://carloscumbrado.github.io/HandsOn/group07/resource/</code>
-</p>
+<h3>Internal linking</h3>
 
 <p>
-  Internal links are consistently created using relations such as:
+  Internal consistency is ensured by linking observations to stations and pollutants
+  using object properties such as:
 </p>
 
 <ul>
-  <li><code>aq:hasStation</code> – connects each observation to the station where the measurement was made.</li>
-  <li><code>aq:measuresPollutant</code> – links observations with their corresponding pollutant.</li>
-  <li><code>aq:hasDate</code>, <code>aq:hasValue</code> and <code>aq:hasUnit</code> – provide typed attributes describing each measurement.</li>
+  <li><code>aq:hasStation</code></li>
+  <li><code>aq:measuresPollutant</code></li>
+  <li><code>aq:hasValue</code>, <code>aq:hasUnit</code>, <code>aq:hasDate</code></li>
 </ul>
-
-<p>
-  This ensures that every observation in the dataset is fully linked to its
-  contextual entities, forming a structured and navigable graph.
-</p>
 
 <h3>External linking</h3>
 
 <p>
-  While external linking was considered during the design phase, implementing
-  it would require additional information that is not included in the source CSV.
-  In particular:
+  External linking was performed for pollutant entities. Pollutant codes were reconciled
+  with <strong>Wikidata</strong> using OpenRefine, allowing the creation of
+  <code>owl:sameAs</code> links between local pollutant resources and their corresponding
+  Wikidata entities (e.g., NO₂, O₃, PM₁₀).
 </p>
 
-<ul>
-  <li>
-    <strong>Pollutants:</strong> The dataset identifies pollutants only by numeric
-    codes (e.g. <em>12, 14, 8</em>). Since it does not provide the corresponding
-    chemical names (NO₂, O₃, PM₁₀, etc.), linking them reliably to Wikidata or
-    DBpedia would require an external lookup table that is not part of the assignment.
-  </li>
-
-  <li>
-    <strong>Stations:</strong> The CSV does not include geographical coordinates or
-    district names for the air-quality stations. Without this information, linking
-    stations to external datasets such as Wikidata or OpenStreetMap would be speculative
-    and therefore incorrect.
-  </li>
-</ul>
-
 <p>
-  For these reasons, no <em>owl:sameAs</em> links to external sources were added.
-  However, the adopted URI structure and ontology design make the dataset easy to
-  extend in future work. If additional metadata (chemical identifiers, coordinates)
-  becomes available, external linking can be incorporated without modifying the
-  existing graph.
+  These links enable interoperability with other datasets and allow enrichment with
+  additional information available in Wikidata.
 </p>
 
   
   <h2>5. Conclusions</h2>
-  <p>
-    The <strong>Air Quality in Madrid (2024)</strong> dataset meets all requirements for Linked Data generation.
-    It will be transformed into RDF using the defined ontology, modeling air quality observations, pollutants, and stations.
-    The resource naming strategy guarantees URI persistence with other smart city datasets.
-  </p>
+
+<p>
+  The Air Quality in Madrid (2024) dataset satisfies the requirements for Linked Data
+  generation. The data has been analyzed, legally assessed, modeled with a lightweight
+  ontology, transformed into RDF, linked to external datasets, and prepared for
+  publication. The adopted strategies ensure extensibility, interoperability, and
+  compliance with Linked Data best practices.
+</p>
+
 
   <div class="footer">
     <p><em>Prepared by Group 07 — Hands-On 2, Data Science (2025–2026)</em></p>
   </div>
+
+
+
 
 </body>
 </html>
