@@ -46,6 +46,9 @@ Explicamos cómo se generaron los identificadores y se trataron los datos:
 
 * **Dificultad Principal:** La dificultad o malentendido más grande fue al obtener el archivo rdf generado a partir de nuestro csv haciendo uso de yarrrml matey, ya que el rdf generado tenía unas 19000 líneas y no estábamos para nada seguros de que ese resultado se aproximase al resultado esperado. 
 * **Lección Aprendida:** Lo más importante que hemos aprendido ha sido el cómo usar herramientas tan útiles como la mencionada yarrrml matey, ya que facilita mucho tareas que pueden ser pesadas, como la generación del archivo .rdf.
+
+* **Dificultad Técnica Resuelta:** Nos encontramos con un problema al generar el RDF completo debido a que el CSV original usaba punto y coma (`;`) como separador y comas (`,`) para los decimales, lo que causaba conflictos con el parser de YARRRML/RML.
+* **Solución:** Realizamos una limpieza adicional del CSV normalizando los separadores a comas (estándar CSV) y los decimales a puntos, lo que permitió generar correctamente las tripletas con los tipos de datos (Datatypes) correctos.
 ---
 
 ## Comentarios finales
