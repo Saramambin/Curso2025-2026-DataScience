@@ -1176,5 +1176,21 @@
     "columnName": "alcaldia-2",
     "similarValue": " La Paz",
     "description": "Borrar los datos de cotejo de las celdas que contienen \" La Paz\" en la columna alcaldia-2"
+  },
+    {
+    "op": "core/column-removal",
+    "columnName": "est",
+    "description": "Eliminar columna est"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "cve-est",
+    "description": "Eliminar columna cve-est"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "año",
+    "newColumnName": "anio",
+    "description": "Renombra la columna año a anio"
   }
 ]
